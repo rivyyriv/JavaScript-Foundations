@@ -3,6 +3,12 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
+             
+             
+let principal = 200000;
+let interestRate = 0.05;
+let years = 30;
+let name = "River" ;
 
 
 
@@ -12,15 +18,31 @@
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
 Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
+*/
+
+let monthlyInterestRate = interestRate / 12;
+/*
+
 
 Create another variable called `periods` and give it the value of years*12.
 */
 
 
+let periods = years * 12;
 
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
+
+*/
+let numerator =  Math.pow(monthlyInterestRate + 1, periods) * monthlyInterestRate;
+
+let denominator = Math.pow(monthlyInterestRate + 1, periods) -1; 
+
+let monthlyRate = numerator / denominator * principal;
+
+/*
+
 
 Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
 
@@ -37,8 +59,28 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator(principal, interestRate, years, Name, creditScore){
+
+if (creditScore > 740) {
+interestRate = interestRate * 0.95;
+} 
+else if (creditScore < 660) {
+interestRate = interestRate * 1.05;
+} 
 
 
+let monthlyInterestRate = interestRate / 12;
+
+let periods = years * 12;
+
+let numerator =  Math.pow(monthlyInterestRate + 1, periods) * monthlyInterestRate;
+
+let denominator = Math.pow(monthlyInterestRate + 1, periods) -1; 
+
+let monthlyRate = numerator / denominator * principal;
+
+return Name +", your monthly rate is " + monthlyRate;
+}
 
 
 
@@ -49,6 +91,7 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
+/*Done on line 62-*/
 
 
 
@@ -59,6 +102,8 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+        /*Done on line 62-*/
+-
 
 
 
